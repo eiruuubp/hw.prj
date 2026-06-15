@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>껠끄쇼즈</title>
+    <style>
+        /* 웹폰트 */
+        @font-face {
+            font-family: 'GyeonggiMillenniumTitle';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/Title_Light.woff') format('woff');
+            font-weight: 300;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GyeonggiMillenniumTitle';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/Title_Medium.woff') format('woff');
+            font-weight: 500;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GyeonggiMillenniumTitle';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/Title_Bold.woff') format('woff');
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GyeonggiMillenniumTitle';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/TitleV.woff') format('woff');
+            font-weight: 800;
+            font-display: swap;
+        }
+
+        /* 애니메이션 */
+        @keyframes website {
+            0% { transform: translateY(30px); opacity: 0;}
+            100% { transform: translateY(0); opacity: 1;}
+        }
+
+        /* html */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #ECF5FC;
+        }
+
+        .app {
+            width: 1230px;
+            margin: 20px auto;
+            background-color: #fff;
+            display: grid;
+
+            grid-template-columns: 220px 20px 960px;
+            grid-template-rows: 50px 140px auto 80px;
+            gap: 16px;
+
+            grid-template-areas:
+                "header header header"
+                "nav    nav    nav"
+                "sidebar main  main"
+                "sidebar footer footer";
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        header,
+        nav,
+        aside,
+        main,
+        footer {
+            border: 2px solid #FDDDE1;
+            padding: 16px;
+            border-radius: 15px;
+        }
+
+        header {
+            grid-area: header;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            padding: 0 20px;
+            font-size: 14px;
+            color: #8bbefc;
+        }
+
+        nav {
+            grid-area: nav;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20pxz;
+            font-family: 'GyeonggiMillenniumTitle';
+        }
+
+        aside {
+            grid-area: sidebar;
+            align-self: start;
+        }
+
+        main {
+            grid-area: main;
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer {
+            grid-area: footer;
+            border: 2px solid #FDDDE1;
+            border-radius: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .back-to-main {
+            text-decoration: none;
+            color: #8bbefc;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.2s ease;
+        }
+
+        .back-to-main:hover {
+            color: #004E82;
+        }
+
+        /* 사이드 프로필 */
+
+        .profile-box {
+            width: 180px;
+            border: 2px solid #FDDDE1;
+            padding: 10px;
+            margin-bottom: 12px;
+            border-radius: 15px;
+        }
+
+        .side-image {
+            padding: 0;
+            width: 180px;
+            height: 180px;
+            border: none;
+            margin-bottom: 12px;
+        }
+
+        .side-image img {
+            width: 85%;
+            height: 85%;
+        }
+
+        .category {
+            width: 180px;
+            border: 2px solid #FDDDE1;
+            padding: 10px;
+            margin-top: 12px;
+            justify-self: start;
+            align-items: start;
+            font-size: 14px;
+            color: #8bbefc;
+            font-weight: bold;
+            border-radius: 15px;
+        }
+
+        .category div:hover {
+            color: #004E82;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: 260px 260px 260px;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 30px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+
+            border: 10px solid #ECF5FC;
+            border-radius: 15px;
+            background-color: #fff;
+            transition: transform 0.2s ease;
+            box-shadow: 0.4s ease;
+
+            animation-name: website;
+            animation-duration: 0.8s;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+
+        .card-header {
+            padding: 16px;
+            background-color: #ECF5FC;
+            border-bottom: 2px;
+            text-align: center;
+        }
+
+        .card-image {
+            height: 220px;
+            background-color: #ECF5FC;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ECF5FC;
+            font-weight: bold;
+
+            border-bottom: 2px dotted #FDDDE1;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .card-info {
+            padding: 20px;
+            text-align: left;
+            border-top: 2px;
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .store-name {
+            margin: 0 0 8px 0;
+            font-size: 25px;
+            font-weight: 800;
+            font-family: 'GyeonggiMillenniumTitle';
+            color: navy;
+        }
+
+        .store-address {
+            margin: 0;
+            font-size: 16px;
+            color: #000;
+        }
+
+        .custom-link {
+            text-decoration: none;
+            color: #004E82;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-family: 'GyeonggiMillenniumTitle';
+            font-weight: bold;
+        }
+
+        .custom-link:hover {
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <!-- 블로그 헤더 -->
+        <header>
+            <span>프롤로그 | 블로그</span>
+            <span>지도 | 서재 | 안부</span>
+        </header>
+
+        <!-- 제목 -->
+        <nav>
+            <img src="../images/껠끄로고.png" alt="로고" style="width: 120x; height: 120px;">
+            <span style="font-weight: bold; font-size: 65px; color: #004E82;">껠끄쇼즈</span>
+        </nav>
+
+        <!-- 블로그 프로필 영역 -->
+        <aside>
+            <div class="profile-box">
+                <div class="side-image">
+                    <img src="../images/image1.png" alt="프로필 사진">
+                </div>
+                <div class="profile" style="font-size: 15px; color: #004E82; font-weight: bold;">
+                    최한빈<br>
+                    profile<br>
+                    <br>
+                    <div style="font-size: 20px; font-weight: bold; color: gray;">+ 이웃추가</div>
+                </div>
+            </div>
+
+            <div class="category">
+                <div>카테고리</div>
+                <br>
+                <div>> 전체보기</div>
+                <div>> 맛집탐방</div>
+                <div>> 일상</div>
+                <div>> [블챌] 왓츠인마이블로그</div>
+
+            </div>
+        </aside>
+
+
+        <!-- 메뉴 소개 -->
+        <main>
+            <h2 style="font-size: 30px;">추천 메뉴 Top 3 ✔️</h2>
+            <div style="margin-top: 15px;">
+                <a href="https://naver.me/xzxmv8Pa" class="custom-link">📍껠끄쇼즈 바로가기</a>
+
+                <a href="http://www.instagram.com/quelquechose_seoul" class="custom-link">📌 더 알아보기</a>
+            </div>
+
+            <!-- 메뉴1 -->
+            <div class="card-container" style="margin-top: 15px;">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="store-name">+ 바닐라타르트 +</h3>
+                    </div>
+                    <div class="card-image">
+                        <img src="../images/껠끄1.png" alt="바닐라타르트">
+                    </div>
+                    <div class="card-info">
+                        <p class="store-address">고급 바닐라빈이 잔뜩 들어가 입에 넣는 순간 지금까지 먹어온 바닐라맛은 다 가짜인걸 깨닫게 해주는 대표 타르트 🥧
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 메뉴2 -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="store-name">+ 레제르 +</h3>
+                    </div>
+                    <div class="card-image">
+                        <img src="../images/레제르.png" alt="레제르">
+                    </div>
+                    <div class="card-info">
+                        <p class="store-address">층층이 쌓인 딸기와 향긋한 크림이 폭신한 시트와 함께 부드러운 맛을 주는 시즌 한정 케이크 🍰</p>
+                    </div>
+                </div>
+
+                <!-- 메뉴3 -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="store-name">+ 유자 샌드쿠키 +</h3>
+                    </div>
+                    <div class="card-image">
+                        <img src="../images/껠끄2.png" alt="유자샌드쿠키">
+                    </div>
+                    <div class="card-info">
+                        <p class="store-address">바삭한 쿠키 사이에 상큼하고 깔끔한 유자 크림이 샌드되어 있어 얼려 먹으면 더 맛있는 샌드쿠키 🍪</p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <footer>
+            <a href="website.html" class="back-to-main">⬅️ 메인홈으로 돌아가기</a>
+        </footer>
+
+    </div>
+</body>
+
+</html>
