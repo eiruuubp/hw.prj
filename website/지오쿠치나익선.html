@@ -37,8 +37,15 @@
 
         /* 애니메이션 */
         @keyframes website {
-            0% { transform: translateY(30px); opacity: 0;}
-            100% { transform: translateY(0); opacity: 1;}
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         /* html */
@@ -258,6 +265,122 @@
 
         .custom-link:hover {
             color: blueviolet;
+        }
+
+        /* 태블릿 반응형 (화면 가로 768px 이하) */
+        @media (max-width: 768px) {
+            .app {
+                width: 100%;
+                padding: 0 20px;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "sidebar"
+                    "footer";
+            }
+
+            aside {
+                padding: 10px 0;
+            }
+
+            .profile-box,
+            .category {
+                width: 100%;
+            }
+
+            .profile-box {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .side-image {
+                width: 100px !important;
+                height: 100px !important;
+                margin-bottom: 0 !important;
+                flex-shrink: 0;
+            }
+
+            .profile {
+                padding: 0;
+                text-align: left;
+            }
+
+            .card-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+
+            .card {
+                width: calc(50% - 8px);
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 20px 0;
+            }
+
+            nav img {
+                width: 90px !important;
+                height: 90px !important;
+            }
+
+            nav span {
+                font-size: 45px !important;
+            }
+
+            .store-name {
+                font-size: 20px;
+            }
+
+            .store-address {
+                font-size: 14px;
+            }
+
+            main h2 {
+                font-size: 26px !important;
+            }
+        }
+
+        /* 모바일 반응형 (화면 가로 480px 이하) */
+        @media (max-width: 480px) {
+            .app {
+                padding: 0 10px;
+            }
+
+            aside {
+                padding: 10px;
+            }
+
+            .card {
+                width: 100%;
+            }
+
+            nav img {
+                width: 80px !important;
+                height: 80px !important;
+            }
+
+            nav span {
+                font-size: 35px !important;
+            }
+
+            .custom-link {
+                font-size: 16px;
+            }
+
+            main h2 {
+                font-size: 24px !important;
+            }
         }
     </style>
 </head>

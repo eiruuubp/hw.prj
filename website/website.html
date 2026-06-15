@@ -234,6 +234,143 @@
             font-size: 15px;
             color: gray;
         }
+
+        /* 태블릿 반응형 (화면 가로가 768px 이하일 때) */
+        @media (max-width: 768px) {
+
+            .app {
+                width: 100%;
+                padding: 0 20px;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "sidebar"
+                    "footer";
+            }
+
+            aside {
+                padding: 10px 0;
+            }
+
+            .profile-box,
+            .category {
+                width: 100%;
+            }
+
+            .profile-box {
+                display:flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .side-image {
+                width: 100px !important;
+                height: 100px !important;
+                margin-bottom: 0 !important;
+                flex-shrink: 0;
+            }
+
+            .card-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .card {
+                flex-direction: column;
+            }
+
+            .card-image {
+                width: 100%;
+                height: 180px;
+                border-bottom: 2px dotted #FDDDE1;
+                background-color: #ECF5FC;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .card-info {
+                padding: 16px;
+            }
+        }
+
+        /* 모바일 반응형 (화면 가로가 480px 이하일 때) */
+        @media (max-width: 480px) {
+
+            .app {
+                width: 100%;
+                padding: 0 10px;
+
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+
+                grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "sidebar"
+                    "footer";
+            }
+
+            .profile-box,
+            .category {
+                width: 100%;
+            }
+
+            .profile-box {
+                display:flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .side-image {
+                width: 100px !important;
+                height: 100px !important;
+                margin-bottom: 0 !important;
+                flex-shrink: 0;
+            }
+
+            .profile {
+                padding: 0;
+                text-align: left;
+            }
+
+            .card-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .store-name {
+                font-size: 20px;
+            }
+
+            .store-address {
+                font-size: 15px;
+            }
+
+            nav img {
+                width: 80px !important;
+                height: 80px !important;
+            }
+
+            nav span {
+                font-size: 13px !important;
+            }
+
+            header span {
+                font-size: 13px !important;
+            }
+        }
     </style>
 </head>
 

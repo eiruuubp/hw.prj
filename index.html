@@ -234,6 +234,143 @@
             font-size: 15px;
             color: gray;
         }
+
+        /* 태블릿 반응형 (화면 가로가 768px 이하일 때) */
+        @media (max-width: 768px) {
+
+            .app {
+                width: 100%;
+                padding: 0 20px;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "sidebar"
+                    "footer";
+            }
+
+            aside {
+                padding: 10px 0;
+            }
+
+            .profile-box,
+            .category {
+                width: 100%;
+            }
+
+            .profile-box {
+                display:flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .side-image {
+                width: 100px !important;
+                height: 100px !important;
+                margin-bottom: 0 !important;
+                flex-shrink: 0;
+            }
+
+            .card-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .card {
+                flex-direction: column;
+            }
+
+            .card-image {
+                width: 100%;
+                height: 180px;
+                border-bottom: 2px dotted #FDDDE1;
+                background-color: #ECF5FC;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .card-info {
+                padding: 16px;
+            }
+        }
+
+        /* 모바일 반응형 (화면 가로가 480px 이하일 때) */
+        @media (max-width: 480px) {
+
+            .app {
+                width: 100%;
+                padding: 0 10px;
+
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+
+                grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "sidebar"
+                    "footer";
+            }
+
+            .profile-box,
+            .category {
+                width: 100%;
+            }
+
+            .profile-box {
+                display:flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .side-image {
+                width: 100px !important;
+                height: 100px !important;
+                margin-bottom: 0 !important;
+                flex-shrink: 0;
+            }
+
+            .profile {
+                padding: 0;
+                text-align: left;
+            }
+
+            .card-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .store-name {
+                font-size: 20px;
+            }
+
+            .store-address {
+                font-size: 15px;
+            }
+
+            nav img {
+                width: 80px !important;
+                height: 80px !important;
+            }
+
+            nav span {
+                font-size: 13px !important;
+            }
+
+            header span {
+                font-size: 13px !important;
+            }
+        }
     </style>
 </head>
 
@@ -255,7 +392,7 @@
         <aside>
             <div class="profile-box">
                 <div class="side-image">
-                    <img src="./images/image1.png" alt="프로필 사진">
+                    <img src="../images/image1.png" alt="프로필 사진">
                 </div>
                 <div class="profile" style="font-size: 15px; color: #004E82; font-weight: bold;">
                     최한빈<br>
@@ -286,9 +423,9 @@
 
             <div class="card-container">
 
-                <a href="./website/지오쿠치나익선.html" class="card">
+                <a href="지오쿠치나익선.html" class="card">
                     <div class="card-image">
-                        <img src="./images/지오소개.png" alt="지오쿠치나">
+                        <img src="../images/지오소개.png" alt="지오쿠치나">
                     </div>
                     <div class="card-info">
                         <h3 class="store-name">지오쿠치나익선</h3>
@@ -296,9 +433,9 @@
                     </div>
                 </a>
 
-                <a href="./website/벽돌곱창.html" class="card">
+                <a href="벽돌곱창.html" class="card">
                     <div class="card-image">
-                        <img src="./images/image3.png" alt="">
+                        <img src="../images/image3.png" alt="">
                     </div>
                     <div class="card-info">
                         <h3 class="store-name">벽돌곱창</h3>
@@ -306,9 +443,9 @@
                     </div>
                 </a>
 
-                <a href="./website/껠끄쇼즈.html" class="card">
+                <a href="껠끄쇼즈.html" class="card">
                     <div class="card-image">
-                        <img src="./images/껠끄소개.png" alt="껠끄쇼즈">
+                        <img src="../images/껠끄소개.png" alt="껠끄쇼즈">
                     </div>
                     <div class="card-info">
                         <h3 class="store-name">껠끄쇼즈</h3>
@@ -316,9 +453,9 @@
                     </div>
                 </a>
 
-                <a href="./website/타이펑.html" class="card">
+                <a href="타이펑.html" class="card">
                     <div class="card-image">
-                        <img src="./images/타이펑1.png" alt="타이펑">
+                        <img src="../images/타이펑1.png" alt="타이펑">
                     </div>
                     <div class="card-info">
                         <h3 class="store-name">타이펑</h3>
